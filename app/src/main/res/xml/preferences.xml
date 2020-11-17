@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="Datos personales" >
+        <EditTextPreference
+            android:dialogTitle="Introduzca su Nombre"
+            android:key="Nombre"
+            android:title="Nombre" />
+        <EditTextPreference
+            android:dialogTitle="Introduzca sus Apellidos"
+            android:key="Apellidos"
+            android:title="Apellidos" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Datos de sesanciones" >
+        <ListPreference
+            android:dialogTitle="Nivel de preocupación"
+            android:entries="@array/nivelpreocupacion"
+            android:entryValues="@array/codigonivelpreocupacion"
+            android:key="NivelPreocupación"
+            android:summary="Indicar el nivel de preocupación que tiene"
+            android:title="Nivel de preocupación" />
+
+        <MultiSelectListPreference
+            android:dialogTitle="Síntomas"
+            android:entries="@array/sintomas"
+            android:entryValues="@array/codigosintomas"
+            android:key="Sintomas"
+            android:summary="Elija los síntomas que tiene"
+            android:title="Síntomas" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Avisos" >
+        <CheckBoxPreference
+            android:key="Notificaciones"
+            android:summary="Encender o apagar notificaciones"
+            android:title="Notificaciones" />
+        <CheckBoxPreference
+            android:key="Positivos"
+            android:summary="Positivos cerca"
+            android:title="Positivos" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

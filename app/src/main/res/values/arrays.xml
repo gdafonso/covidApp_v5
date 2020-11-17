@@ -1,0 +1,30 @@
+<resources>
+    <string-array name="nivelpreocupacion">
+        <item>Sin preocupación</item>
+        <item>Algo preocupado</item>
+        <item>Preocupado</item>
+        <item>Muy preocupado</item>
+        <item>No salgo de mi casa</item>
+    </string-array>
+    <string-array name="codigonivelpreocupacion">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+    </string-array>
+    <string-array name="sintomas">
+        <item>Dolor de cabeza</item>
+        <item>Tos</item>
+        <item>Fiebre >=36,9</item>
+        <item>Fiebre >=38</item>
+        <item>Mocos</item>
+    </string-array>
+    <string-array name="codigosintomas">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+    </string-array>
+</resources>

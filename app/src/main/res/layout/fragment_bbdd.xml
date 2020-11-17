@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.bbdd.BbddFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/lblBBDD_cabecera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/bbdd_cabecera"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/lblBBDD_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/bbdd_lbl_nombre"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+        <EditText
+            android:id="@+id/txtBBDD_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/lblBBDD_direccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/bbdd_lbl_direccion"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+        <EditText
+            android:id="@+id/txtBBDD_direccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/lblBBDD_telefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/bbdd_lbl_telefono"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+        <EditText
+            android:id="@+id/txtBBDD_telefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <Button
+            android:id="@+id/btnBBDD_guardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/bbdd_btn_guardar">
+        </Button>
+        <TextView
+            android:id="@+id/lblBBDD_contador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/bbdd_lbl_contador"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+        <TextView
+            android:id="@+id/lblBBDD_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/bbdd_lbl_total"
+            android:textSize="18sp"
+            android:textStyle="normal" />
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="match_parent"
+            android:layout_height="333dp">
+
+            <TextView
+                android:id="@+id/txtBBDD_listado"
+                android:layout_width="match_parent"
+                android:layout_height="348dp"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+    </LinearLayout>
+</FrameLayout>

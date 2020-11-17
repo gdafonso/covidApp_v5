@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.preferences.PreferencesFragment">
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resultado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtResultado" />
+
+    <TextView
+        android:id="@+id/txtNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/etiquetanombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtView" />
+
+    <EditText
+        android:id="@+id/CampoNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/txtNombre"
+        app:layout_constraintTop_toBottomOf="@+id/txtView" />
+
+    <TextView
+        android:id="@+id/txtNick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/etiquetnick"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CampoNombre" />
+
+
+    <EditText
+        android:id="@+id/CampoAlias"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintStart_toEndOf="@+id/txtNick"
+        app:layout_constraintTop_toBottomOf="@+id/CampoNombre" />
+
+    <TextView
+        android:id="@+id/txtAvisos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textAvisos"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CampoAlias" />
+
+    <ToggleButton
+        android:id="@+id/btnAvisos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        app:layout_constraintStart_toEndOf="@+id/txtAvisos"
+        app:layout_constraintTop_toBottomOf="@+id/CampoAlias" />
+
+    <Button
+        android:id="@+id/btnGuardarNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botonnombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAvisos" />
+
+    <Button
+        android:id="@+id/btnGuardarNick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botonnick"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAvisos"/>
+
+    <Button
+        android:id="@+id/btnGuardarTodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botontodo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGuardarNombre" />
+
+   <Button
+        android:id="@+id/btnMostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botonmostrartodo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGuardarTodo" />
+
+    <Button
+        android:id="@+id/btnXml"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botonxml"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMostrar" />
+
+    <Button
+        android:id="@+id/btnMostrarXml"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mostrarxml"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnXml" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
