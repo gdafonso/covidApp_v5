@@ -1,4 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">covidApp_v5</string>
+    <string name="app_name">covidApp</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_preferences">Preferences</string>
+    <string name="menu_bbdd">BBDD</string>
+    <string name="menu_files">Files</string>
+    <string name="menu_content">Content Provider</string>
+    <string name="resultado">Result</string>
+    <string name="etiquetanombre">Type your name</string>
+    <string name="etiquetnick">Type your nick</string>
+    <string name="botonnombre">Save name</string>
+    <string name="botonnick">Save nick</string>
+    <string name="botontodo">Save all</string>
+    <string name="botonmostrartodo">Show preferences</string>
+    <string name="textoboton">Preferences</string>
+    <string name="botonxml">Preferences XML</string>
+    <string name="mostrarxml">Show preferences XML</string>
+    <string name="textAvisos">Avisos</string>
+    <string name="bbdd_cabecera">Type new location data</string>
+    <string name="bbdd_lbl_nombre">Name</string>
+    <string name="bbdd_lbl_direccion">Address</string>
+    <string name="bbdd_lbl_telefono">Phone</string>
+    <string name="bbdd_btn_guardar">Almacenar datos lugar</string>
+    <string name="bbdd_lbl_contador">Número de registros</string>
+    <string name="bbdd_lbl_total">XX</string>
+    <string name="bbdd_btn_eliminar">Delete location</string>
+    <string name="txtGuardar">Text to save</string>
+    <string name="txtMostrar">Text readed</string>
+    <string name="btnGuardar">Save</string>
+    <string name="btnLeer">Read</string>
+    <string name="txtFicheroInterno">Internal file</string>
+    <string name="txtFicheroExterno">External file</string>
+    <string name="txtFicheroRaw">Raw file</string>
+    <string name="txtcontentprovider">Implemented in the BBDD</string>
 </resources>
