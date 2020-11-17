@@ -2,18 +2,18 @@ package com.example.covidapp_v5.ui.preferences;
 
 import android.content.Context;
 import android.os.Bundle;
-//TODO ESTO
-/*import androidx.preference.PreferenceFragmentCompat;
 
+import android.preference.PreferenceFragment;
 import com.example.covidapp_v5.R;
 
-public class SettingsFragment extends PreferenceFragmentCompat {
+public class SettingsFragment extends PreferenceFragment {
     private OnFragmentInteractionListener mListener;
 
-    @Override
+    //@Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         // Load the preferences from an XML resource
-        setPreferencesFromResource(R.xml.preferences, rootKey);
+        //TODO ESTO
+        //setPreferencesFromResource(R.xml.preferences, rootKey);
     }
 
     @Override
@@ -34,4 +34,4 @@ public class SettingsFragment extends PreferenceFragmentCompat {
     }
 
     public interface OnFragmentInteractionListener {}
-}*/
+}

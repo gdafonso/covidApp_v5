@@ -111,14 +111,14 @@ public class PreferencesFragment extends Fragment {
                 etiqueta.setText(nombre + ", " + alias + ", " + musiconoff);
             }//onClick
         });
-//TODO ESTO
-        /*botonxmlpreferences.setOnClickListener(new View.OnClickListener() {
+
+        botonxmlpreferences.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intencionxml = new Intent(getActivity(), SettingsContainerActivity.class);
                 PreferencesFragment.this.startActivity(intencionxml);
             }
-        });*/
+        });
 
         botonmostrarxmlpreferences.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {

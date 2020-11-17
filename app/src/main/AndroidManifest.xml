@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.preferences.SettingsContainerActivity" />
         <provider
             android:name=".ui.bbdd.CompartirDatos"
             android:authorities="com.example.covidapp_v5.ui.bbdd.CompartirDatos"
