@@ -42,7 +42,6 @@ public class FicherosFragment extends Fragment {
         final Button botonleer= root.findViewById(R.id.btnFILeer);
         final String FILENAME = "ficherointerno";
         //esto de externos
-        final Button botonguardarext= root.findViewById(R.id.btnFEGuardar);
         final Button botonleerext= root.findViewById(R.id.btnFELeer);
         // y este para el de raw
         final Button botonguardarraw= root.findViewById(R.id.btnFRGuardar);
@@ -102,31 +101,6 @@ public class FicherosFragment extends Fragment {
         });
 
         //esto de externos, hasta aquí de internos
-        botonguardarext.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                String estado;
-                boolean memok=false;
-                estado = Environment.getExternalStorageState();
-                if (estado.equals(Environment.MEDIA_MOUNTED)){
-                    memok = true;
-                }
-                TextView etiqueta = root.findViewById(R.id.txtLeido);
-                etiqueta.setText(estado);
-                if (memok){
-                    try{
-                        File ruta = new File(getContext().getExternalFilesDir(null),"ficheroexterno.txt");
-                        Toast toast1 =Toast.makeText(getContext().getApplicationContext(),ruta.toString(), Toast.LENGTH_SHORT);
-                        toast1.show();
-                        OutputStreamWriter salida = new OutputStreamWriter(new FileOutputStream(ruta));
-                        salida.write(textoescrito.getText().toString());
-                        salida.close();
-                    }catch (Exception ex){
-                        Log.e("Ficherosexternos", "Error al escribir fichero en memoria externa");
-                    }
-                }
-            }
-        });
-
         botonleerext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

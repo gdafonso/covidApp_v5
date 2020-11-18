@@ -3,6 +3,7 @@ package com.example.covidapp_v5.ui.preferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.Preference;
 
 import com.example.covidapp_v5.R;
 
@@ -11,6 +12,5 @@ public class SettingsContainerActivity extends AppCompatActivity implements Sett
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings_container);
-
     }
 }
