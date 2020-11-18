@@ -19,7 +19,6 @@
             android:key="NivelPreocupación"
             android:summary="Indicar el nivel de preocupación que tiene"
             android:title="Nivel de preocupación" />
-
         <MultiSelectListPreference
             android:dialogTitle="Síntomas"
             android:entries="@array/sintomas"
@@ -37,6 +36,16 @@
             android:key="Positivos"
             android:summary="Positivos cerca"
             android:title="Positivos" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Backup and restore" >
+        <Preference
+            android:key="Backup"
+            android:summary="Backup de las preferencias en archivo"
+            android:title="Backup" />
+        <Preference
+            android:key="Restore"
+            android:summary="Restore de las preferencias desde archivo"
+            android:title="Restore" />
     </PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>

@@ -103,17 +103,6 @@
         app:layout_constraintTop_toBottomOf="@id/btnFIGuardar" />
 
     <Button
-        android:id="@+id/btnFEGuardar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="2dp"
-        android:text="@string/btnGuardar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtFicheroExterno" />
-
-    <Button
         android:id="@+id/btnFELeer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -121,7 +110,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="2dp"
         android:text="@string/btnLeer"
-        app:layout_constraintStart_toEndOf="@id/btnFEGuardar"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtFicheroExterno" />
 
     <TextView
@@ -135,7 +124,7 @@
         android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnFEGuardar" />
+        app:layout_constraintTop_toBottomOf="@id/btnFELeer" />
 
     <Button
         android:id="@+id/btnFRGuardar"
