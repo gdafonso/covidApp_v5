@@ -11,15 +11,19 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.provider.ContactsContract;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.MediaController;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 
 import androidx.annotation.NonNull;
@@ -70,8 +74,15 @@ public class ContentFragment extends Fragment  {
             readContacts();
         }
 
+        contactsView.setClickable(true);
+        VideoView videoView = (VideoView)root.findViewById(R.id.videoView1);
 
-
+        contactsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                playVideo(videoView);
+            }
+    });
         return root;
     }
 
@@ -221,5 +232,17 @@ public class ContentFragment extends Fragment  {
         } else {
             permissionOperation = true;
         }
+    }
+
+    private void playVideo(VideoView videoView) {
+
+        MediaController mc = new MediaController(getContext());
+        mc.setAnchorView(videoView);
+        mc.setMediaPlayer(videoView);
+        videoView.setMediaController(mc);
+        videoView.setVideoPath("android.resource://"+getActivity().getPackageName()+"/"+R.raw.ucam);
+        videoView.requestFocus();
+        videoView.start();
+
     }
 }
