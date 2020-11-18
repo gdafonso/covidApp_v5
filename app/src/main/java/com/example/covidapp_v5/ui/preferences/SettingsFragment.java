@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
+
+import com.example.covidapp_v5.MainActivity;
 import com.example.covidapp_v5.R;
 
 import java.io.File;
