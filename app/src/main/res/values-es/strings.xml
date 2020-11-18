@@ -39,4 +39,5 @@
     <string name="action_settings">Ajustes</string>
     <string name="menu_home">Inicio</string>
     <string name="menu_content">Content Provider</string>
+    <string name="menu_hospitales">Buscar hospitales cercanos</string>
 </resources>
