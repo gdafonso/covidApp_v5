@@ -37,7 +37,6 @@ public class PreferencesFragment extends Fragment {
         final ToggleButton toggle = root.findViewById(R.id.btnAvisos);
         final Button botonguardatodo = root.findViewById(R.id.btnGuardarTodo);
         final Button botonmuestratodo = root.findViewById(R.id.btnMostrar);
-        final Button botonxmlpreferences = root.findViewById(R.id.btnXml);
         final Button botonmostrarxmlpreferences = root.findViewById(R.id.btnMostrarXml);
 
         etiqueta.setText("");
@@ -110,14 +109,6 @@ public class PreferencesFragment extends Fragment {
                 String musiconoff = preferencias.getString("musica", "sin definir");
                 etiqueta.setText(nombre + ", " + alias + ", " + musiconoff);
             }//onClick
-        });
-
-        botonxmlpreferences.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intencionxml = new Intent(getActivity(), SettingsContainerActivity.class);
-                PreferencesFragment.this.startActivity(intencionxml);
-            }
         });
 
         botonmostrarxmlpreferences.setOnClickListener(new View.OnClickListener() {
