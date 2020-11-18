@@ -110,19 +110,11 @@
         app:layout_constraintTop_toBottomOf="@+id/btnGuardarTodo" />
 
     <Button
-        android:id="@+id/btnXml"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/botonxml"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMostrar" />
-
-    <Button
         android:id="@+id/btnMostrarXml"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/mostrarxml"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnXml" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMostrar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
