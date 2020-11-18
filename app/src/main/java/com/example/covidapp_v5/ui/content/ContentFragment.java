@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.content.ContentProviderOperation;
 import android.content.ContentProviderResult;
+import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -48,17 +49,15 @@ public class ContentFragment extends Fragment  {
                              ViewGroup container, Bundle savedInstanceState) {
 
         contactPermission();
+        deleteAllContacts();
 
         View root = inflater.inflate(R.layout.fragment_content, container, false);
 
-        given_name="112 java";
-        family_name="112 java";
-        mobile="112";
-        home="home";
-        email="email";
-
         if(permissionOperation){
-            addContact(given_name, family_name, mobile, home, email);
+            addContact("Emergencias 112", "112","email@112.com");
+            addContact("Morales Messeguer", "968360900","email@112.com");
+            addContact("Reina Sofía", "968359000","email@112.com");
+            addContact("Arrixaca", "968369500","email@112.com");
         }else{
             Toast.makeText(getActivity(), "Permmission required", Toast.LENGTH_LONG).show();
         }
@@ -76,7 +75,7 @@ public class ContentFragment extends Fragment  {
         return root;
     }
 
-    private void addContact(String given_name, String family_name, String mobile, String home, String email) {
+    private void addContact(String given_name, String mobile, String email) {
         ArrayList<ContentProviderOperation> contact = new ArrayList<ContentProviderOperation>();
         contact.add(ContentProviderOperation.newInsert(ContactsContract.RawContacts.CONTENT_URI)
                 .withValue(ContactsContract.RawContacts.ACCOUNT_TYPE, null)
@@ -88,7 +87,6 @@ public class ContentFragment extends Fragment  {
                 .withValueBackReference(ContactsContract.RawContacts.Data.RAW_CONTACT_ID, 0)
                 .withValue(ContactsContract.RawContacts.Data.MIMETYPE, ContactsContract.CommonDataKinds.StructuredName.CONTENT_ITEM_TYPE)
                 .withValue(ContactsContract.CommonDataKinds.StructuredName.GIVEN_NAME, given_name)
-                .withValue(ContactsContract.CommonDataKinds.StructuredName.FAMILY_NAME, family_name)
                 .build());
 
         // Contact No Mobile
@@ -97,14 +95,6 @@ public class ContentFragment extends Fragment  {
                 .withValue(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE)
                 .withValue(ContactsContract.CommonDataKinds.Phone.NUMBER, mobile)
                 .withValue(ContactsContract.CommonDataKinds.Phone.TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_MOBILE)
-                .build());
-
-        // Contact Home
-        contact.add(ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI)
-                .withValueBackReference(ContactsContract.RawContacts.Data.RAW_CONTACT_ID, 0)
-                .withValue(ContactsContract.Data.MIMETYPE, ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE)
-                .withValue(ContactsContract.CommonDataKinds.Phone.NUMBER, home)
-                .withValue(ContactsContract.CommonDataKinds.Phone.TYPE, ContactsContract.CommonDataKinds.Phone.TYPE_HOME)
                 .build());
 
         // Email    `
@@ -201,6 +191,23 @@ public class ContentFragment extends Fragment  {
         }
     }
 
+    private void deleteAllContacts(){
+        ContentResolver cr =getContext().getContentResolver();
+        Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,
+                null, null, null, null);
+        while (cur.moveToNext()) {
+            try{
+                String lookupKey = cur.getString(cur.getColumnIndex(ContactsContract.Contacts.LOOKUP_KEY));
+                Uri uri = Uri.withAppendedPath(ContactsContract.Contacts.CONTENT_LOOKUP_URI, lookupKey);
+                System.out.println("The uri is " + uri.toString());
+                cr.delete(uri, null, null);
+            }
+            catch(Exception e)
+            {
+                System.out.println(e.getStackTrace());
+            }
+        }
+    }
 
     private void contactPermission() {
         if (android.os.Build.VERSION.SDK_INT >= 23) {
