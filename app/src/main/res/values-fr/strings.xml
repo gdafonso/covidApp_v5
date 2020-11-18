@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">covidApp</string>
+    <string name="bbdd_lbl_nombre">Nom</string>
+    <string name="bbdd_lbl_direccion">Adresse</string>
+    <string name="bbdd_lbl_telefono">Telephone</string>
+    <string name="bbdd_btn_eliminar">Annulé endroit</string>
+    <string name="bbdd_lbl_total">XX</string>
+    <string name="bbdd_btn_guardar">Garder les dates du endroit</string>
+    <string name="btnGuardar">Garder</string>
+    <string name="btnLeer">Lire</string>
+    <string name="txtFicheroInterno">Dossier interieur</string>
+    <string name="txtFicheroExterno">Dossier extérieur</string>
+    <string name="txtFicheroRaw">Dossier Raw</string>
+    <string name="txtMostrar">Texte lu</string>
+    <string name="txtGuardar">Texte à garder</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="menu_content">Content Provider</string>
+    <string name="action_settings">Ajustements</string>
+    <string name="menu_home">Début</string>
+    <string name="menu_files">Dossier</string>
+    <string name="menu_bbdd">BBDD</string>
+    <string name="resultado">Rèsultat</string>
+    <string name="menu_preferences">Préférence</string>
+    <string name="textoboton">Préférence</string>
+    <string name="botonmostrartodo">Montrer préférence</string>
+    <string name="botonxml">Préférence XML</string>
+    <string name="mostrarxml">Montrer préférence XML</string>
+</resources>

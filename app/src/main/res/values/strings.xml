@@ -1,16 +1,16 @@
 <resources>
-    <string name="app_name">covidApp_v5</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="app_name">covidApp</string>
+    <string name="navigation_drawer_open">Abrir navigation drawer</string>
+    <string name="navigation_drawer_close">Cerrar navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Ajustes</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_preferences">Preferences</string>
+    <string name="menu_home">Inicio</string>
+    <string name="menu_preferences">Preferencias</string>
     <string name="menu_bbdd">BBDD</string>
-    <string name="menu_files">Files</string>
+    <string name="menu_files">Archivos</string>
     <string name="menu_content">Content Provider</string>
 
     <!-- Shared -->
@@ -35,8 +35,8 @@
     <string name="bbdd_lbl_total">XX</string>
     <string name="bbdd_btn_eliminar">Eliminar Lugar</string>
     <!-- Ficheros -->
-    <string name="txtGuardar">Texto a guardar:</string>
-    <string name="txtMostrar">Texto leído:</string>
+    <string name="txtGuardar">Texto a guardar</string>
+    <string name="txtMostrar">Texto leído</string>
     <string name="btnGuardar">Guardar</string>
     <string name="btnLeer">Leer</string>
     <string name="txtFicheroInterno">Fichero Interno</string>
