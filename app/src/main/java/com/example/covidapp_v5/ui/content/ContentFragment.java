@@ -17,9 +17,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.provider.ContactsContract;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.MediaController;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 
 import androidx.annotation.NonNull;
@@ -38,6 +41,7 @@ public class ContentFragment extends Fragment  {
     List<String> contactsList = new ArrayList<>();
     final int Permission_Request = 210;
     Boolean permissionOperation = false;
+    VideoView videoView;
 
     String given_name;
     String family_name;
@@ -53,6 +57,8 @@ public class ContentFragment extends Fragment  {
 
         View root = inflater.inflate(R.layout.fragment_content, container, false);
 
+        videoView = (VideoView)root.findViewById(R.id.videoView);
+
         if(permissionOperation){
             addContact("Emergencias 112", "112","email@112.com");
             addContact("Morales Messeguer", "968360900","email@112.com");
@@ -65,13 +71,17 @@ public class ContentFragment extends Fragment  {
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, contactsList);
         contactsView.setAdapter(adapter);
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(getActivity(), new String[]{ Manifest.permission.READ_CONTACTS }, 1);
+            ActivityCompat.requestPermissions(getActivity(), new String[]{ Manifest.permission.READ_CONTACTS }  , 1);
         } else {
             readContacts();
         }
 
-
-
+        contactsView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //playVideo();
+            }
+        });
         return root;
     }
 
@@ -221,5 +231,16 @@ public class ContentFragment extends Fragment  {
         } else {
             permissionOperation = true;
         }
+    }
+
+    private void playVideo() {
+        MediaController mc = new MediaController(getContext());
+        mc.setAnchorView(videoView);
+        mc.setMediaPlayer(videoView);
+        videoView.setMediaController(mc);
+        videoView.setVideoPath("android.resource://"+getActivity().getPackageName()+"/"+R.raw.arrixaca);
+        videoView.requestFocus();
+        videoView.start();
+
     }
 }
