@@ -1,5 +1,7 @@
 package com.example.covidapp_v5.ui.ficheros;
 
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -15,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.covidapp_v5.R;
+import com.example.covidapp_v5.ui.bbdd.BaseDatos;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -25,8 +28,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.nio.channels.FileChannel;
+
+import static com.example.covidapp_v5.ui.bbdd.BaseDatos.*;
 
 public class FicherosFragment extends Fragment {
+
+    private static final String DB_NAME="Lugares";
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -46,6 +54,7 @@ public class FicherosFragment extends Fragment {
         // y este para el de raw
         final Button botonguardarraw= root.findViewById(R.id.btnFRGuardar);
         final Button botonleerraw= root.findViewById(R.id.btnFRLeer);
+
 
         //esto de internos
         botonguardar.setOnClickListener(new View.OnClickListener() {
@@ -151,5 +160,25 @@ public class FicherosFragment extends Fragment {
         });
 
         return root;
+    }
+    private void exportDB(String cadena){
+        File sd = Environment.getExternalStorageDirectory();
+        File data = Environment.getDataDirectory();
+        FileChannel source=null;
+        FileChannel destination=null;
+        String currentDBPath = "/data/data/com.example.covidapp_v5"+"/databases/"+DB_NAME;
+        String backupDBPath = cadena;
+        File currentDB = new File(data, currentDBPath);
+        File backupDB = new File(sd, backupDBPath);
+        try {
+            source = new FileInputStream(currentDB).getChannel();
+            destination = new FileOutputStream(backupDB).getChannel();
+            destination.transferFrom(source, 0, source.size());
+            source.close();
+            destination.close();
+            Toast.makeText(getActivity(), "DB Exported!", Toast.LENGTH_LONG).show();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
     }
 }

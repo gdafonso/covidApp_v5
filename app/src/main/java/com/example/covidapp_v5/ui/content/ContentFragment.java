@@ -80,7 +80,7 @@ public class ContentFragment extends Fragment  {
         contactsView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                playVideo(videoView);
+                playVideo(videoView, i);
             }
     });
         return root;
@@ -234,13 +234,30 @@ public class ContentFragment extends Fragment  {
         }
     }
 
-    private void playVideo(VideoView videoView) {
+    private void playVideo(VideoView videoView, int pos) {
 
         MediaController mc = new MediaController(getContext());
         mc.setAnchorView(videoView);
         mc.setMediaPlayer(videoView);
         videoView.setMediaController(mc);
-        videoView.setVideoPath("android.resource://"+getActivity().getPackageName()+"/"+R.raw.ucam);
+        switch (pos){
+            case 0:
+                videoView.setVideoPath("android.resource://"+
+                        getActivity().getPackageName()+"/"+R.raw.emergencias);
+                break;
+            case 1:
+                videoView.setVideoPath("android.resource://"+
+                        getActivity().getPackageName()+"/"+R.raw.messeguer);
+                break;
+            case 2:
+                videoView.setVideoPath("android.resource://"+
+                        getActivity().getPackageName()+"/"+R.raw.sofia);
+                break;
+            case 3:
+                videoView.setVideoPath("android.resource://"+
+                        getActivity().getPackageName()+"/"+R.raw.arrixaca);
+                break;
+        }
         videoView.requestFocus();
         videoView.start();
 

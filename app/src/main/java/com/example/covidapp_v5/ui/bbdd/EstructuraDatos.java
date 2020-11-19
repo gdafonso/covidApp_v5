@@ -4,6 +4,8 @@ import android.provider.BaseColumns;
 
 public class EstructuraDatos implements BaseColumns {
 
+    public static String DB_FILEPATH = "/data/data/{package_name}/databases/Lugares.db";
+
     public static final String TABLE_NAME = "Lugares";
     public static final String COLUMN_NAME_NOMBRE = "nombre";
     public static final String COLUMN_NAME_DIRECCION = "direccion";
