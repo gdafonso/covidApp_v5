@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">covidApp</string>
+    <string name="app_name">covidApp_v5</string>
     <string name="navigation_drawer_open">Abrir navigation drawer</string>
     <string name="navigation_drawer_close">Cerrar navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -12,6 +12,7 @@
     <string name="menu_bbdd">BBDD</string>
     <string name="menu_files">Archivos</string>
     <string name="menu_content">Content Provider</string>
+    <string name="menu_hospitales">Buscar hospitales cercanos</string>
 
     <!-- Shared -->
     <string name="resultado">Resultado</string>
@@ -44,4 +45,15 @@
     <string name="txtFicheroRaw">Fichero Raw</string>
     <!-- Content -->
     <string name="txtcontentprovider">Implementado en la BBDD</string>
+
+    <string name="Acceso">Bienvenido a covidApp_v5</string>
+    <string name="Acerca_de">Acerca de</string>
+    <string name="Salir">Salir</string>
+    <string name="Condiciones">Condiciones</string>
+    <string name="PCRPositiva">Informar PCR Positiva</string>
+    <string name="PCRNegativa">Informar PCR Negativa</string>
+    <string name="LlamadaCovid">Llamar al teléfono del COVID</string>
+    <string name="Llamada112">Llamar a emergencias 112</string>
+    <string name="Hospitales">Buscar hospitales cercanos</string>
+    <string name="Lugares">Lugares</string>
 </resources>

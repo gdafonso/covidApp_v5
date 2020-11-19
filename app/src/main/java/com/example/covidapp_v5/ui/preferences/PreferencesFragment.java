@@ -3,6 +3,7 @@ package com.example.covidapp_v5.ui.preferences;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,37 +32,13 @@ public class PreferencesFragment extends Fragment {
 
         final TextView etiqueta = root.findViewById(R.id.txtView);
         final Button botonmuestratodo = root.findViewById(R.id.btnMostrar);
-        final Button botonmostrarxmlpreferences = root.findViewById(R.id.btnMostrarXml);
 
         etiqueta.setText("");
 
         botonmuestratodo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
-                SharedPreferences preferencias = getParentFragment().getActivity().getSharedPreferences("perfil", MODE_PRIVATE);
-                HashSet vacio = new HashSet<String>();
-                vacio.add("1");
-                vacio.add("2");
-                String nombre = preferencias.getString("nombre", "no definido");
-                String apellidos = preferencias.getString("Apellidos", "no definido");
-                String notificaciones = String.valueOf(preferencias.getBoolean("Notificaciones", false));
-                String nivelpreocupacion = preferencias.getString("NivelPreocupación", "sin definir");
-                HashSet sintomas = (HashSet) preferencias.getStringSet("Sintomas", vacio);
-                String sintomasstring = sintomas.toString();
-                String positivos = String.valueOf(preferencias.getBoolean("Positivos", false));
-                etiqueta.setText("Nombre: " + nombre + "/n"
-                        + "Apellidos: " + apellidos + "/n"
-                        + "Preocupación: " + nivelpreocupacion + "/n"
-                        + "Síntomas: " + sintomasstring + "/n"
-                        + "Notificaciones: " + notificaciones + "/n"
-                        + positivos);
-            }//onClick
-        });
-
-        botonmostrarxmlpreferences.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-
-                SharedPreferences preferencias = getContext().getSharedPreferences("com.example.unidad5_preferences", MODE_PRIVATE);
+                SharedPreferences preferencias = root.getContext().getSharedPreferences("perfil", MODE_PRIVATE);
                 HashSet vacio = new HashSet<String>();
                 vacio.add("1");
                 vacio.add("2");
@@ -72,8 +49,13 @@ public class PreferencesFragment extends Fragment {
                 HashSet sintomas = (HashSet) preferencias.getStringSet("Sintomas", vacio);
                 String sintomasstring = sintomas.toString();
                 String positivos = String.valueOf(preferencias.getBoolean("Positivos", false));
-                etiqueta.setText(nombre + ", " + apellidos + ", " + nivelpreocupacion + ", " + sintomasstring + ", " + notificaciones + ", " + positivos);
-
+                etiqueta.setSingleLine(false);
+                etiqueta.setText("Nombre: " + nombre + System.getProperty("line.separator")
+                        + "Apellidos: " + apellidos + System.getProperty("line.separator")
+                        + "Preocupación: " + nivelpreocupacion + System.getProperty("line.separator")
+                        + "Síntomas: " + sintomasstring + System.getProperty("line.separator")
+                        + "Notificaciones: " + notificaciones + System.getProperty("line.separator")
+                        + "Positivos: " + positivos);
             }//onClick
         });
     return root;

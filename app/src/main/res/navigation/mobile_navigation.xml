@@ -34,4 +34,5 @@
         android:name="com.example.covidapp_v5.ui.content.ContentFragment"
         android:label="@string/menu_content"
         tools:layout="@layout/fragment_content" />
+
 </navigation>
