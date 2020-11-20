@@ -27,6 +27,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.channels.FileChannel;
 
@@ -45,39 +46,67 @@ public class FicherosFragment extends Fragment {
         final EditText textoescrito= root.findViewById(R.id.editGuardar);
         final TextView etiqueta= root.findViewById(R.id.txtLeido);
         textoescrito.setText("");
+
         //esto de internos
         final Button botonguardar= root.findViewById(R.id.btnFIGuardar);
         final Button botonleer= root.findViewById(R.id.btnFILeer);
-        final String FILENAME = "ficherointerno";
+        final String[] FILENAME = {""};
+        final String[][] OUTPUTFILENAME = {{""}};
+
         //esto de externos
         final Button botonleerext= root.findViewById(R.id.btnFELeer);
+
         // y este para el de raw
         final Button botonguardarraw= root.findViewById(R.id.btnFRGuardar);
         final Button botonleerraw= root.findViewById(R.id.btnFRLeer);
 
-
+        final String[] outFileName = new String[1];
         //esto de internos
         botonguardar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
+                // ruta fichero DB
+                final String inFileName = "//data//data//com.example.covidapp_v5//databases//Lugares";
+                // nombre fichero backup DB
                 String cadena = textoescrito.getText().toString();
 
-                FileOutputStream fos = null;
+                File dbFile = new File(inFileName);
+                FileInputStream fis;
+                OutputStream output;
                 try {
-                    fos =  getContext().openFileOutput(FILENAME, 0);
+
+                    fis = new FileInputStream(dbFile);
+                    String outFileName = "/data/data/com.example.covidapp_v5/files/"+ cadena + ".db";
+                    String[] parts = outFileName.split("/");
+                    System.out.println("PARTE[1]" + parts[1]); // data
+                    System.out.println("PARTE[2]" + parts[2]); // data
+                    System.out.println("PARTE[3]" + parts[3]); // com.example.covidapp_v5
+                    System.out.println("PARTE[4]" + parts[4]); // files
+                    System.out.println("PARTE[5]" + parts[5]); // BACKUP.db
+
+                    FILENAME[0] = parts[5];
+
+                    // Open the empty db as the output stream
+                    output = new FileOutputStream(outFileName);
+
+                    // Transfer bytes from the inputfile to the outputfile
+                    byte[] buffer = new byte[1024];
+                    int length;
+                    while ((length = fis.read(buffer))>0){
+                        output.write(buffer, 0, length);
+                    }
+
+                    // Close the streams
+                    output.flush();
+                    output.close();
+                    fis.close();
+
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
-                }
-                try {
-                    fos.write(cadena.getBytes());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                try {
-                    fos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+
                 textoescrito.setText("");
                 etiqueta.setText("");
             }//onClick
@@ -85,10 +114,13 @@ public class FicherosFragment extends Fragment {
 
         botonleer.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
+
                 InputStreamReader ficherolectura=null;
-                String cadena;
-                try {
-                    ficherolectura = new InputStreamReader(getContext().openFileInput(FILENAME));
+                String cadena = FILENAME[0];
+                etiqueta.append("Se ha generado la copia de seguridad: " + cadena);
+               /* try {
+                    ficherolectura = new InputStreamReader(getContext().openFileInput(FILENAME[0]));
+
                     BufferedReader br= new BufferedReader(ficherolectura);
                     cadena = br.readLine();
                     while (cadena != null){
@@ -105,7 +137,7 @@ public class FicherosFragment extends Fragment {
                     }catch (IOException ioe){
                         ioe.printStackTrace();
                     }
-                }
+                }*/
             }
         });
 
@@ -161,24 +193,5 @@ public class FicherosFragment extends Fragment {
 
         return root;
     }
-    private void exportDB(String cadena){
-        File sd = Environment.getExternalStorageDirectory();
-        File data = Environment.getDataDirectory();
-        FileChannel source=null;
-        FileChannel destination=null;
-        String currentDBPath = "/data/data/com.example.covidapp_v5"+"/databases/"+DB_NAME;
-        String backupDBPath = cadena;
-        File currentDB = new File(data, currentDBPath);
-        File backupDB = new File(sd, backupDBPath);
-        try {
-            source = new FileInputStream(currentDB).getChannel();
-            destination = new FileOutputStream(backupDB).getChannel();
-            destination.transferFrom(source, 0, source.size());
-            source.close();
-            destination.close();
-            Toast.makeText(getActivity(), "DB Exported!", Toast.LENGTH_LONG).show();
-        } catch(IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 }

@@ -247,11 +247,11 @@ public class ContentFragment extends Fragment  {
                 break;
             case 1:
                 videoView.setVideoPath("android.resource://"+
-                        getActivity().getPackageName()+"/"+R.raw.messeguer);
+                        getActivity().getPackageName()+"/"+R.raw.sofia);
                 break;
             case 2:
                 videoView.setVideoPath("android.resource://"+
-                        getActivity().getPackageName()+"/"+R.raw.sofia);
+                        getActivity().getPackageName()+"/"+R.raw.messeguer);
                 break;
             case 3:
                 videoView.setVideoPath("android.resource://"+
