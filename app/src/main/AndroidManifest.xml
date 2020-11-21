@@ -17,11 +17,12 @@
             android:theme="@style/Theme.CovidApp_v5.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".ui.preferences.SettingsContainerActivity" />
+        <activity android:name=".ui.preferences.SensoresFragment"/>
+        <activity android:name=".ui.preferences.OnTouchFragment"/>
         <provider
             android:name=".ui.bbdd.CompartirDatos"
             android:authorities="com.example.covidapp_v5.ui.bbdd.CompartirDatos"
