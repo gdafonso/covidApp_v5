@@ -24,7 +24,16 @@ public class OnTouchFragment extends AppCompatActivity implements View.OnTouchLi
     @Override
     public boolean onTouch(View view, MotionEvent motionEvent) {
         TextView salida = findViewById(R.id.label_salida);
-        salida.append(motionEvent.toString()+"\n");
+        //salida.append(motionEvent.toString()+"\n");
+        String acciones[] = {"ACTION_DOWN", "ACTION_UP", "ACTION_MOVE", "ACTION_CANCEL",
+        "ACTION_OUTSIDE", "ACTION_POINTER_DOWN", "ACTION_POINTER_UP"};
+        int accion = motionEvent.getAction();
+        int codigoAccion = accion & motionEvent.ACTION_MASK;
+        salida.append(acciones[codigoAccion]);
+        for(int i=0; i<motionEvent.getPointerCount(); i++){
+            salida.append(" puntero:" + motionEvent.getPointerId(i) + " x:" + motionEvent.getX(i) + " y:" + motionEvent.getY(i));
+        }
+        salida.append("\n");
         return false;
     }
 }
