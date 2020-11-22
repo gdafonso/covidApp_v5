@@ -2,16 +2,16 @@
     <string name="app_name">covidApp_v5</string>
     <string name="navigation_drawer_open">Abrir navigation drawer</string>
     <string name="navigation_drawer_close">Cerrar navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">covidApp</string>
+    <string name="nav_header_subtitle">covidapp@covidapp.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Ajustes</string>
 
     <string name="menu_home">Inicio</string>
-    <string name="menu_preferences">Preferencias</string>
+    <string name="menu_preferences">Pruebas diagnósticas</string>
     <string name="menu_bbdd">BBDD</string>
     <string name="menu_files">Archivos</string>
-    <string name="menu_content">Content Provider</string>
+    <string name="menu_content">Lugares de PCR</string>
     <string name="menu_hospitales">Buscar hospitales cercanos</string>
 
     <!-- Shared -->
@@ -31,7 +31,7 @@
     <string name="bbdd_lbl_nombre">Nombre</string>
     <string name="bbdd_lbl_direccion">Dirección</string>
     <string name="bbdd_lbl_telefono">Teléfono</string>
-    <string name="bbdd_btn_guardar">Almacenar datos lugar</string>
+    <string name="bbdd_btn_guardar">Guardar datos en la base de datos</string>
     <string name="bbdd_lbl_contador">Número de registros</string>
     <string name="bbdd_lbl_total">XX</string>
     <string name="bbdd_btn_eliminar">Eliminar Lugar</string>
@@ -42,12 +42,11 @@
     <string name="btnGuardarRaw">Guardar</string>
     <string name="btnLeer">Leer</string>
     <string name="btnLeerRaw">Leer</string>
-    <string name="txtFicheroInterno">Fichero Interno</string>
-    <string name="txtFicheroExterno">Fichero Externo</string>
-    <string name="txtFicheroRaw">Fichero Raw</string>
+    <string name="txtFicheroInterno">Base de datos</string>
+    <string name="txtFicheroExterno">Backup de preferencias</string>
     <!-- Content -->
-    <string name="txtcontentprovider">Implementado en la BBDD</string>
-
+    <string name="txttexto">Pulse en los lugares para ver un breve vídeo</string>
+    <!-- Main -->
     <string name="Acceso">Bienvenido a covidApp_v5</string>
     <string name="Acerca_de">Acerca de</string>
     <string name="Salir">Salir</string>
@@ -58,19 +57,15 @@
     <string name="Llamada112">Llamar a emergencias 112</string>
     <string name="Hospitales">Buscar hospitales cercanos</string>
     <string name="Lugares">Lugares</string>
-    <string name="botonabrirsensores">Sensores</string>
-
-    <!-- Proximity and light sensor output. The %1$.2f part is a placeholder
-         that will be filled in at runtime:
-         %1 is the value to replace
-         $.2f says the value is a float, with two decimal places. -->
-    <string name="label_proximity">Sensor de Proximidad: %1$.2f</string>
-    <string name="label_light">Sensor de Luz Ambiental: %1$.2f</string>
-    <string name="label_temperature">Sensor de Temperatura Ambiental: %1$.2f</string>
-    <string name="label_entrada">Pulsa sobre esta vista</string>
-    <string name="label_salida">Pulsaciones:</string>
-    <!-- error message if sensors are not available. -->
-    <string name="error_no_sensor">No sensor</string>
-    <string name="botonabrirontouch">Tactil</string>
+    <!-- Pruebas -->
+    <string name="label_advertencia">Acerquese al sensor para medir correctamente la temperatura</string>
+    <string name="label_proximity">Proximidad: %1$.2f</string>
+    <string name="label_light">Luz Ambiental: %1$.2f</string>
+    <string name="label_temperature">Temperatura: %1$.2f</string>
+    <string name="label_entrada">Pulse en el recuadro</string>
+    <string name="label_salida">Pulsaciones</string>
+    <string name="error_no_sensor">Fallo sensor</string>
+    <string name="botonabrirontouch">Prueba de reflejos</string>
+    <string name="botonabrirsensores">Prueba de temperatura</string>
 
 </resources>

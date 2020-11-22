@@ -7,44 +7,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.preferences.PreferencesFragment">
 
-    <TextView
-        android:id="@+id/txtResultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/resultado"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtResultado" />
-
-   <Button
-        android:id="@+id/btnMostrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/botonmostrartodo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtView" />
-
     <Button
         android:id="@+id/btnAbrirSensores"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/botonabrirsensores"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMostrar"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
     <Button
         android:id="@+id/btnAbrirOnTouch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/botonabrirontouch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAbrirSensores"/>
+        app:layout_constraintTop_toBottomOf="@+id/btnAbrirSensores"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

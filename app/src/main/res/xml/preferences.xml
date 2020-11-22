@@ -37,15 +37,11 @@
             android:summary="Positivos cerca"
             android:title="Positivos" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="Backup and restore" >
+    <PreferenceCategory android:title="Backup" >
         <Preference
             android:key="Backup"
             android:summary="Backup de las preferencias en archivo"
             android:title="Backup" />
-        <Preference
-            android:key="Restore"
-            android:summary="Restore de las preferencias desde archivo"
-            android:title="Restore" />
     </PreferenceCategory>
 
 </androidx.preference.PreferenceScreen>

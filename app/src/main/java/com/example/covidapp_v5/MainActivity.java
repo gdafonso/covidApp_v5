@@ -36,22 +36,18 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ExtendedFloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-                String encodedPhoneNumber = String.format("tel:%s", Uri.encode("112"));
-                Uri number = Uri.parse(encodedPhoneNumber);
-                Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
-                startActivity(callIntent);
-            }
+        fab.setOnClickListener(view -> {
+            String encodedPhoneNumber = String.format("tel:%s", Uri.encode("112"));
+            Uri number = Uri.parse(encodedPhoneNumber);
+            Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
+            startActivity(callIntent);
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_files, R.id.nav_preferences, R.id.nav_bbdd, R.id.nav_content, R.id.nav_hospitales)
+                R.id.nav_home, R.id.nav_files, R.id.nav_preferences, R.id.nav_bbdd, R.id.nav_content)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

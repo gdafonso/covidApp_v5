@@ -39,51 +39,17 @@ public class PreferencesFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_preferences, container, false);
 
-        final TextView etiqueta = root.findViewById(R.id.txtView);
-        final Button botonmuestratodo = root.findViewById(R.id.btnMostrar);
         final Button botonsensores = root.findViewById(R.id.btnAbrirSensores);
         final Button botonontouch = root.findViewById(R.id.btnAbrirOnTouch);
 
-        etiqueta.setText("");
-
-        botonmuestratodo.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-
-                SharedPreferences preferencias = root.getContext().getSharedPreferences("perfil", MODE_PRIVATE);
-                HashSet vacio = new HashSet<String>();
-                vacio.add("1");
-                vacio.add("2");
-                String nombre = preferencias.getString("Nombre", "no definido");
-                String apellidos = preferencias.getString("Apellidos", "no definido");
-                String notificaciones = String.valueOf(preferencias.getBoolean("Notificaciones", false));
-                String nivelpreocupacion = preferencias.getString("NivelPreocupación", "sin definir");
-                HashSet sintomas = (HashSet) preferencias.getStringSet("Sintomas", vacio);
-                String sintomasstring = sintomas.toString();
-                String positivos = String.valueOf(preferencias.getBoolean("Positivos", false));
-                etiqueta.setSingleLine(false);
-                etiqueta.setText("Nombre: " + nombre + System.getProperty("line.separator")
-                        + "Apellidos: " + apellidos + System.getProperty("line.separator")
-                        + "Preocupación: " + nivelpreocupacion + System.getProperty("line.separator")
-                        + "Síntomas: " + sintomasstring + System.getProperty("line.separator")
-                        + "Notificaciones: " + notificaciones + System.getProperty("line.separator")
-                        + "Positivos: " + positivos);
-            }//onClick
+        botonsensores.setOnClickListener(view -> {
+            Intent intent = new Intent(getContext(), SensoresFragment.class);
+            startActivity(intent);
         });
 
-        botonsensores.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), SensoresFragment.class);
-                startActivity(intent);
-            }
-        });
-
-        botonontouch.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), OnTouchFragment.class);
-                startActivity(intent);
-            }
+        botonontouch.setOnClickListener(view -> {
+            Intent intent = new Intent(getContext(), OnTouchFragment.class);
+            startActivity(intent);
         });
 
     return root;

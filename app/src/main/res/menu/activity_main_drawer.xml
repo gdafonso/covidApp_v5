@@ -6,27 +6,23 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_baseline_home_24"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_preferences"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_baseline_psychology_24"
             android:title="@string/menu_preferences" />
         <item
             android:id="@+id/nav_files"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_baseline_insert_drive_file_24"
             android:title="@string/menu_files" />
         <item
             android:id="@+id/nav_bbdd"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_baseline_storage_24"
             android:title="@string/menu_bbdd" />
         <item
             android:id="@+id/nav_content"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_baseline_location_on_24"
             android:title="@string/menu_content" />
-        <item
-            android:id="@+id/nav_hospitales"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_hospitales" />
     </group>
 </menu>

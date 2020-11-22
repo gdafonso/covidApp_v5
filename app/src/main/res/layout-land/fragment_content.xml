@@ -17,19 +17,21 @@
 
     <ListView
         android:id="@+id/contacts_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="170dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lbltexto"> </ListView>
+        app:layout_constraintTop_toBottomOf="@+id/lbltexto"
+        app:layout_constraintVertical_bias="0.0" />
 
     <VideoView
         android:id="@+id/videoView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="400dp"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:layout_width="560dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/contacts_view"
+        app:layout_constraintTop_toBottomOf="@+id/lbltexto" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -113,39 +113,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtFicheroExterno" />
 
-    <TextView
-        android:id="@+id/txtFicheroRaw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="2dp"
-        android:text="@string/txtFicheroRaw"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnFELeer" />
-
-    <Button
-        android:id="@+id/btnFRGuardar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="2dp"
-        android:text="@string/btnGuardarRaw"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtFicheroRaw" />
-
-    <Button
-        android:id="@+id/btnFRLeer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="2dp"
-        android:text="@string/btnLeerRaw"
-        app:layout_constraintStart_toEndOf="@id/btnFRGuardar"
-        app:layout_constraintTop_toBottomOf="@id/txtFicheroRaw" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
