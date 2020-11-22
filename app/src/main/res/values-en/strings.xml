@@ -31,10 +31,12 @@
     <string name="bbdd_lbl_contador">Número de registros</string>
     <string name="bbdd_lbl_total">XX</string>
     <string name="bbdd_btn_eliminar">Delete location</string>
-    <string name="txtGuardar">Text to save</string>
-    <string name="txtMostrar">Text readed</string>
-    <string name="btnGuardar">Save</string>
-    <string name="btnLeer">Read</string>
+    <string name="txtGuardar">File to save</string>
+    <string name="txtMostrar">File readed</string>
+    <string name="btnGuardar">Create Backup</string>
+    <string name="btnGuardarRaw">Guardar</string>
+    <string name="btnLeer">Read Backup</string>
+    <string name="btnLeerRaw">Read</string>
     <string name="txtFicheroInterno">Internal file</string>
     <string name="txtFicheroExterno">External file</string>
     <string name="txtFicheroRaw">Raw file</string>

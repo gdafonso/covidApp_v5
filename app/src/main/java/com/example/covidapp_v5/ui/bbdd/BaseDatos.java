@@ -4,7 +4,16 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
+
 public class BaseDatos extends SQLiteOpenHelper {
+
+    public static String DB_FILEPATH = "/data/data/{package_name}/databases/Lugares.db";
+
     /*
     Se declara e inicializa una variable encargada de controlar el tipo de dato
     de cada columna de la tabla.
@@ -30,6 +39,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     public BaseDatos(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+
 
     @Override
     /*Método que recibe la consulta Transact-SQL para para crear la Tabla.*/
